@@ -27,7 +27,7 @@
             font-weight: bold;
         }
         .form-label {
-            color: #eaeaea; /* Biar label terlihat */
+            color: #eaeaea;
             font-weight: 500;
         }
         .form-control {
