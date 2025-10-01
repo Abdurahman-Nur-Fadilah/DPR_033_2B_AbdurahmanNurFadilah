@@ -6,20 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('penggajian', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('id_komponen_gaji');
+            $table->unsignedBigInteger('id_anggota');
+            $table->primary(['id_komponen_gaji', 'id_anggota']);
+
+            $table->foreign('id_komponen_gaji')->references('id_komponen_gaji')->on('komponen_gaji');
+            $table->foreign('id_anggota')->references('id_anggota')->on('anggota');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('penggajian');
