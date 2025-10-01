@@ -9,13 +9,11 @@ use App\Models\Pengguna;
 
 class LoginController
 {
-    // Form login
     public function showLogin()
     {
         return view('login');
     }
 
-    // Proses login
     public function login(Request $request)
     {
         $request->validate([
@@ -23,7 +21,7 @@ class LoginController
             'password' => 'required',
         ]);
 
-        // Ambil user berdasarkan email
+
         $user = Pengguna::where('email', $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
