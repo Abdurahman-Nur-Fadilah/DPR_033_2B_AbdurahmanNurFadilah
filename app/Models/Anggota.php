@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anggota extends Model
 {
-    protected $table = 'anggota';          // nama tabel di DB
-    protected $primaryKey = 'id_anggota';  // primary key
-    public $timestamps = false;            // karena tabel kita gak ada created_at, updated_at
+    protected $table = 'anggota';        
+    protected $primaryKey = 'id_anggota';  
+    public $timestamps = false;            
 
     protected $fillable = [
         'nama_depan',
