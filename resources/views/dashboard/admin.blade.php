@@ -45,7 +45,7 @@
                 <div class="card p-3 shadow-sm">
                     <h5>Kelola Data Anggota DPR</h5>
                     <p>Tambah, edit, hapus anggota DPR.</p>
-                    <a href="#" class="btn btn-outline-info btn-sm">Kelola</a>
+                    <a href="{{ route('anggota.index') }}" class="btn btn-outline-info btn-sm">Kelola</a>
                 </div>
             </div>
 

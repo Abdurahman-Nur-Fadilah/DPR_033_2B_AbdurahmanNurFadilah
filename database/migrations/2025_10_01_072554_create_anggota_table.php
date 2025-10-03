@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('gelar_belakang', 50)->nullable();
             $table->enum('jabatan', ['Ketua', 'Wakil Ketua', 'Anggota']);
             $table->enum('status_pernikahan', ['Kawin', 'Belum Kawin', 'Cerai Hidup', 'Cerai Mati']);
+            $table->integer('jumlah_anak')->default(0);
         });
     }
 

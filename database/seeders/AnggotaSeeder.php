@@ -17,6 +17,7 @@ class AnggotaSeeder extends Seeder
                 'gelar_belakang' => '',
                 'jabatan' => 'Ketua',
                 'status_pernikahan' => 'Kawin',
+                'jumlah_anak' => 2,
             ],
             [
                 'nama_depan' => 'Siti',
@@ -25,6 +26,7 @@ class AnggotaSeeder extends Seeder
                 'gelar_belakang' => 'S.H.',
                 'jabatan' => 'Anggota',
                 'status_pernikahan' => 'Belum Kawin',
+                'jumlah_anak' => 0,
             ],
         ]);
     }
