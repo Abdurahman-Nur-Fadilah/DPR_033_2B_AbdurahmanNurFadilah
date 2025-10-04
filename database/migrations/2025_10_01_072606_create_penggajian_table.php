@@ -13,8 +13,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_anggota');
             $table->primary(['id_komponen_gaji', 'id_anggota']);
 
-            $table->foreign('id_komponen_gaji')->references('id_komponen_gaji')->on('komponen_gaji');
-            $table->foreign('id_anggota')->references('id_anggota')->on('anggota');
+            $table->foreign('id_komponen_gaji')->references('id_komponen_gaji')->on('komponen_gaji')->onDelete('cascade');
+            $table->foreign('id_anggota')->references('id_anggota')->on('anggota')->onDelete('cascade');
         });
     }
 
