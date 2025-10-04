@@ -19,4 +19,20 @@ class Anggota extends Model
         'status_pernikahan',
         'jumlah_anak',
     ];
+
+    public function penggajian()
+    {
+        return $this->hasMany(Penggajian::class, 'id_anggota', 'id_anggota');
+    }
+
+
+    public function getTakeHomePayAttribute()
+    {
+        return $this->penggajian()
+        ->with('komponen')
+        ->get()
+        ->sum(function ($p) {
+            return (int) ($p->komponen->nominal ?? 0);
+        });
+    }
 }

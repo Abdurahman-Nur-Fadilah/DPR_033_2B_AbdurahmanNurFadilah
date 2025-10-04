@@ -61,7 +61,7 @@
                 <div class="card p-3 shadow-sm">
                     <h5>Kelola Data Penggajian</h5>
                     <p>Proses data penggajian anggota DPR.</p>
-                    <a href="#" class="btn btn-outline-info btn-sm">Kelola</a>
+                    <a href="{{ route('penggajian.index') }}" class="btn btn-outline-info btn-sm">Kelola</a>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\KomponenGajiController;
+use App\Http\Controllers\PenggajianController;
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
@@ -31,6 +32,14 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/admin/komponen/{id}/edit', [KomponenGajiController::class, 'edit'])->name('komponen.edit');
     Route::put('/admin/komponen/{id}', [KomponenGajiController::class, 'update'])->name('komponen.update');
     Route::delete('/admin/komponen/{id}', [KomponenGajiController::class, 'destroy'])->name('komponen.destroy');
+
+    //Route CRUD Penggajian
+    Route::get('/admin/penggajian', [PenggajianController::class, 'index'])->name('penggajian.index');
+    Route::get('/admin/penggajian/create', [PenggajianController::class, 'create'])->name('penggajian.create');
+    Route::post('/admin/penggajian/store', [PenggajianController::class, 'store'])->name('penggajian.store');
+    Route::get('/admin/penggajian/{id_anggota}/{id_komponen_gaji}/edit', [PenggajianController::class, 'edit'])->name('penggajian.edit');
+    Route::put('/admin/penggajian/{id_anggota}/{id_komponen_gaji}', [PenggajianController::class, 'update'])->name('penggajian.update');
+    Route::delete('/admin/penggajian/{id_anggota}/{id_komponen_gaji}', [PenggajianController::class, 'destroy'])->name('penggajian.destroy');
 });
 
 Route::middleware(['auth', 'role:Public'])->group(function () {
