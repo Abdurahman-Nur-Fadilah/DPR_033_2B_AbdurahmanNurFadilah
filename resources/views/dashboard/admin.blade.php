@@ -53,7 +53,7 @@
                 <div class="card p-3 shadow-sm">
                     <h5>Kelola Data Komponen Gaji & Tunjangan</h5>
                     <p>Atur komponen gaji dan tunjangan DPR.</p>
-                    <a href="#" class="btn btn-outline-info btn-sm">Kelola</a>
+                    <a href="{{ route('komponen.index') }}" class="btn btn-outline-info btn-sm">Kelola</a>
                 </div>
             </div>
 

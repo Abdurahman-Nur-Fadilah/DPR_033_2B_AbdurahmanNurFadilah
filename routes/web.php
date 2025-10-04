@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\KomponenGajiController;
 
 Route::get('/login', [LoginController::class, 'showLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
@@ -22,6 +23,14 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/admin/anggota/{id}/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
     Route::put('/admin/anggota/{id}', [AnggotaController::class, 'update'])->name('anggota.update');
     Route::delete('/admin/anggota/{id}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+
+    //Route CRUD Komponen Gaji
+    Route::get('/admin/komponen', [KomponenGajiController::class, 'index'])->name('komponen.index');
+    Route::get('/admin/komponen/create', [KomponenGajiController::class, 'create'])->name('komponen.create');
+    Route::post('/admin/komponen/store', [KomponenGajiController::class, 'store'])->name('komponen.store');
+    Route::get('/admin/komponen/{id}/edit', [KomponenGajiController::class, 'edit'])->name('komponen.edit');
+    Route::put('/admin/komponen/{id}', [KomponenGajiController::class, 'update'])->name('komponen.update');
+    Route::delete('/admin/komponen/{id}', [KomponenGajiController::class, 'destroy'])->name('komponen.destroy');
 });
 
 Route::middleware(['auth', 'role:Public'])->group(function () {
