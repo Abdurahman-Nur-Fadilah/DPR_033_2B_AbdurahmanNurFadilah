@@ -31,7 +31,6 @@
             <label class="form-label">Nama Depan</label>
             <input type="text" name="nama_depan" class="form-control" required>
         </div>
-
         <div class="mb-3">
             <label class="form-label">Nama Belakang</label>
             <input type="text" name="nama_belakang" class="form-control" required>
